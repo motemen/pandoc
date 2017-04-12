@@ -149,6 +149,11 @@ tests = [ testGroup "markdown"
         , testGroup "ms"
           [ testGroup "writer" $ writerTests "ms"
           ]
+        , testGroup "hatena"
+          [ testGroup "writer" $ writerTests "hatena"
+          , test "reader" ["-r", "hatena", "-w", "native", "-s"]
+              "hatena-reader.hatena" "hatena-reader.native"
+          ]
         ]
 
 -- makes sure file is fully closed after reading

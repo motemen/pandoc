@@ -94,6 +94,7 @@ module Text.Pandoc
                , readTWiki
                , readTxt2Tags
                , readEPUB
+               , readHatena
                -- * Writers: converting /from/ Pandoc format
                , Writer(..)
                , writeNative
@@ -139,6 +140,7 @@ module Text.Pandoc
                , writeCustom
                , writeTEI
                , writeMuse
+               , writeHatena
                -- * Rendering templates and default templates
                , module Text.Pandoc.Templates
                -- * Miscellaneous
@@ -163,6 +165,7 @@ import Text.Pandoc.Readers.DocBook
 import Text.Pandoc.Readers.Docx
 import Text.Pandoc.Readers.EPUB
 import Text.Pandoc.Readers.Haddock
+import Text.Pandoc.Readers.Hatena
 import Text.Pandoc.Readers.HTML
 import Text.Pandoc.Readers.LaTeX
 import Text.Pandoc.Readers.Markdown
@@ -189,6 +192,7 @@ import Text.Pandoc.Writers.DokuWiki
 import Text.Pandoc.Writers.EPUB
 import Text.Pandoc.Writers.FB2
 import Text.Pandoc.Writers.Haddock
+import Text.Pandoc.Writers.Hatena
 import Text.Pandoc.Writers.HTML
 import Text.Pandoc.Writers.ICML
 import Text.Pandoc.Writers.LaTeX
@@ -261,6 +265,7 @@ readers = [ ("native"       , StringReader readNative)
            ,("odt"          , ByteStringReader readOdt)
            ,("t2t"          , StringReader readTxt2Tags)
            ,("epub"         , ByteStringReader readEPUB)
+           ,("hatena"       , StringReader readHatena)
            ]
 
 data Writer m = StringWriter (WriterOptions -> Pandoc -> m String)
@@ -316,6 +321,7 @@ writers = [
   ,("commonmark"   , StringWriter writeCommonMark)
   ,("tei"          , StringWriter writeTEI)
   ,("muse"         , StringWriter writeMuse)
+  ,("hatena"       , StringWriter writeHatena)
   ]
 
 getDefaultExtensions :: String -> Extensions

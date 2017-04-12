@@ -385,6 +385,7 @@ Library
                    Text.Pandoc.Readers.Docx,
                    Text.Pandoc.Readers.Odt,
                    Text.Pandoc.Readers.EPUB,
+                   Text.Pandoc.Readers.Hatena,
                    Text.Pandoc.Writers.Native,
                    Text.Pandoc.Writers.Docbook,
                    Text.Pandoc.Writers.JATS,
@@ -417,6 +418,7 @@ Library
                    Text.Pandoc.Writers.Muse,
                    Text.Pandoc.Writers.Math,
                    Text.Pandoc.Writers.Shared,
+                   Text.Pandoc.Writers.Hatena,
                    Text.Pandoc.Lua,
                    Text.Pandoc.PDF,
                    Text.Pandoc.UTF8,
@@ -559,6 +561,7 @@ Test-Suite test-pandoc
                   Tests.Readers.Odt
                   Tests.Readers.Txt2Tags
                   Tests.Readers.EPUB
+                  Tests.Readers.Hatena
                   Tests.Writers.Native
                   Tests.Writers.ConTeXt
                   Tests.Writers.Docbook
